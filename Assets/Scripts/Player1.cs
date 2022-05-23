@@ -1,9 +1,13 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Player1 : MonoBehaviour
 {
+
+    public TextMeshProUGUI scoreText;
 
     private int superJumpsRemaining;
     private bool jumpKeyWasPressed;
@@ -48,6 +52,8 @@ public class Player1 : MonoBehaviour
             rigidbodyComponent.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
             jumpKeyWasPressed = false;
         }
+
+        scoreText.text = superJumpsRemaining.ToString();
 
        
     }
